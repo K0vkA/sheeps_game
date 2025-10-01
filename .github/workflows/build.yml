@@ -1,0 +1,33 @@
+name: Build Windows EXE
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.2'
+        
+    - name: Install dependencies
+      run: |
+        gem install gosu
+        gem install ocra
+        
+    - name: Build EXE
+      run: |
+        ocra menu.rb main.rb main2.rb dogon.png map.png map2.png sam.png sheep.png shmenu.png vid.png ovechka.ico --windows --icon ovechka.ico --no-lzma
+        
+    - name: Upload EXE
+      uses: actions/upload-artifact@v3
+      with:
+        name: sheeps-game-exe
+        path: menu.exe
