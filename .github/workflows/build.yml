@@ -25,7 +25,7 @@ jobs:
         
     - name: Build EXE
       run: |
-        ocra menu.rb main.rb main2.rb dogon.png map.png map2.png sam.png sheep.png shmenu.png vid.png ovechka.ico --windows --icon ovechka.ico --no-lzma
+        ocra menu.rb main.rb main2.rb dogon.png map.png map2.png sam.png sheep.png shmenu.png vid.png ovechka.ico --windows --icon ovechka.ico --no-lzma --no-dep-run
         
     - name: Upload EXE
       uses: actions/upload-artifact@v4
