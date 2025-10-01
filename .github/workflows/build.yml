@@ -21,6 +21,7 @@ jobs:
       run: |
         gem install gosu
         gem install ocra
+        gem install chunky_png
         
     - name: Build EXE
       run: |
