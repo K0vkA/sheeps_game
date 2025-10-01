@@ -27,7 +27,7 @@ jobs:
         ocra menu.rb main.rb main2.rb dogon.png map.png map2.png sam.png sheep.png shmenu.png vid.png ovechka.ico --windows --icon ovechka.ico --no-lzma
         
     - name: Upload EXE
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: sheeps-game-exe
         path: menu.exe
